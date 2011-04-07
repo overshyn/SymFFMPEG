@@ -1,0 +1,37 @@
+
+TARGET		libxvidcore.lib
+TARGETTYPE	lib
+UID			0
+
+USERINCLUDE ../xvidcore/src ../xvidcore/src/bitstream ../xvidcore/src/dct ../xvidcore/src/image ../xvidcore/src/motion ../xvidcore/src/plugins ../xvidcore/src/prediction ../xvidcore/src/quant ../xvidcore/src/utils
+SYSTEMINCLUDE /epoc32/include/stdapis/glib-2.0 /epoc32/include/stdapis /epoc32/include
+
+SOURCEPATH ../xvidcore/src
+SOURCE decoder.c encoder.c xvid.c
+
+SOURCEPATH ../xvidcore/src/bitstream
+SOURCE bitstream.c cbp.c mbcoding.c
+
+SOURCEPATH ../xvidcore/src/dct
+SOURCE fdct.c idct.c simple_idct.c
+
+SOURCEPATH ../xvidcore/src/image
+SOURCE colorspace.c font.c image.c interpolate8x8.c postprocessing.c qpel.c reduced.c
+
+SOURCEPATH ../xvidcore/src/motion
+SOURCE estimation_bvop.c estimation_common.c estimation_gmc.c estimation_pvop.c estimation_rd_based.c estimation_rd_based_bvop.c gmc.c motion_comp.c sad.c vop_type_decision.c
+
+SOURCEPATH ../xvidcore/src/prediction
+SOURCE mbprediction.c
+
+SOURCEPATH ../xvidcore/src/plugins
+SOURCE plugin_single.c plugin_2pass1.c plugin_2pass2.c plugin_lumimasking.c plugin_dump.c plugin_psnr.c
+
+SOURCEPATH ../xvidcore/src/quant
+SOURCE quant_h263.c quant_matrix.c quant_mpeg.c
+
+SOURCEPATH ../xvidcore/src/utils
+SOURCE emms.c mbtransquant.c mem_align.c mem_transfer.c timer.c
+
+MACRO ARCH_IS_32BIT
+MACRO ARCH_IS_GENERIC

@@ -1,0 +1,13 @@
+
+TARGET		libogg.lib
+TARGETTYPE	lib
+UID			0
+
+USERINCLUDE ../libogg/include
+SYSTEMINCLUDE /epoc32/include/stdapis/glib-2.0 /epoc32/include/libc /epoc32/include/stdapis /epoc32/include
+
+SOURCEPATH ../libogg/src
+SOURCE bitwise.c framing.c
+
+MACRO HAVE_CONFIG_H
+

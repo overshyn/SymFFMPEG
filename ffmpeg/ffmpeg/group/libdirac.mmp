@@ -1,0 +1,29 @@
+
+TARGET		libdirac.lib
+TARGETTYPE	lib
+UID			0
+ 
+USERINCLUDE ../dirac ../dirac/libdirac_byteio ../dirac/libdirac_common ../dirac/libdirac_decoder ../dirac/libdirac_encoder ../dirac/libdirac_motionest
+SYSTEMINCLUDE /epoc32/include /epoc32/include/stdapis /epoc32/include/stdapis/stlport
+ 
+SOURCEPATH ../dirac/libdirac_byteio
+SOURCE accessunit_byteio.cpp displayparams_byteio.cpp parseunit_byteio.cpp byteio.cpp picture_byteio.cpp codingparams_byteio.cpp dirac_byte_stream.cpp parseparams_byteio.cpp mvdata_byteio.cpp mvdataelement_byteio.cpp transform_byteio.cpp endofsequence_byteio.cpp component_byteio.cpp subband_byteio.cpp dirac_byte_stats.cpp
+ 
+SOURCEPATH ../dirac/libdirac_common
+SOURCE arith_codec.cpp band_codec.cpp band_vlc.cpp common.cpp picture.cpp picture_buffer.cpp mot_comp.cpp motion.cpp mv_codec.cpp pic_io.cpp upconvert.cpp wavelet_utils.cpp cmd_line.cpp dirac_assertions.cpp upconvert_mmx.cpp wavelet_utils_mmx.cpp mot_comp_mmx.cpp video_format_defaults.cpp dirac_exception.cpp
+ 
+SOURCEPATH ../dirac/libdirac_decoder
+SOURCE comp_decompress.cpp picture_decompress.cpp seq_decompress.cpp dirac_cppparser.cpp dirac_parser.cpp
+ 
+SOURCEPATH ../dirac/libdirac_encoder
+SOURCE comp_compress.cpp picture_compress.cpp quality_monitor.cpp quant_chooser.cpp seq_compress.cpp dirac_encoder.cpp rate_control.cpp prefilter.cpp
+ 
+SOURCEPATH ../dirac/libdirac_motionest
+SOURCE block_match.cpp downconvert.cpp me_mode_decn.cpp me_subpel.cpp me_utils.cpp pixel_match.cpp me_utils_mmx.cpp downconvert_mmx.cpp
+ 
+OPTION CW -wchar_t on
+ 
+MACRO _WCHAR_T_DECLARED
+
+SOURCEPATH ../dirac/libdirac_encoder
+SOURCE enc_picture.cpp enc_queue.cpp

@@ -1,0 +1,31 @@
+***************
+*** 125,135 ****
+  	int mpeg;
+  	int scaler_lum, scaler_chr;
+  
+  	quant_intraFuncPtr const quant[2] =
+  		{
+  			quant_h263_intra,
+  			quant_mpeg_intra
+  		};
+  
+  	mpeg = !!(pParam->vol_flags & XVID_VOL_MPEGQUANT);
+  	scaler_lum = get_dc_scaler(pMB->quant, 1);
+--- 125,141 ----
+  	int mpeg;
+  	int scaler_lum, scaler_chr;
+  
++ #ifdef __CW32__
++ 	quant_intraFuncPtr quant[2];
++ 	quant[0] = quant_h263_intra;
++ 	quant[1] = quant_mpeg_intra;
++ #else
+  	quant_intraFuncPtr const quant[2] =
+  		{
+  			quant_h263_intra,
+  			quant_mpeg_intra
+  		};
++ #endif
+  
+  	mpeg = !!(pParam->vol_flags & XVID_VOL_MPEGQUANT);
+  	scaler_lum = get_dc_scaler(pMB->quant, 1);

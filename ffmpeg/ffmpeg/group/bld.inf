@@ -1,0 +1,26 @@
+
+PRJ_MMPFILES
+libavcodec.mmp
+libavcodec_ext.mmp
+libavformat.mmp
+libavutil.mmp
+libswscale.mmp
+libavdevice.mmp
+ffmpeg.mmp
+gnumakefile ..\sis\pyffmpeg.mak
+liba52.mmp
+libamrnb.mmp
+libamrwb.mmp
+libdirac.mmp
+libfaac.mmp
+libfaad.mmp
+libgsm.mmp
+libmp3lame.mmp
+libnut.mmp
+libogg.mmp
+liboil.mmp
+..\libtheora-1.1.1\symbian\theora.mmp
+..\libvorbis-1.3.2\symbian\vorbis.mmp
+libschroedinger.mmp
+libxvidcore.mmp
+x264.mmp

@@ -1,0 +1,15 @@
+ 
+TARGET		libfaac.lib
+TARGETTYPE	lib
+UID			0
+ 
+USERINCLUDE ../faac/include ../faac/libfaac ../faac
+SYSTEMINCLUDE /epoc32/include /epoc32/include/stdapis
+ 
+SOURCEPATH ../faac/libfaac
+SOURCE aacquant.c backpred.c bitstream.c channels.c fft.c filtbank.c frame.c huffman.c ltp.c midside.c psychkni.c tns.c util.c
+ 
+SOURCEPATH ../faac/libfaac/kiss_fft
+SOURCE kiss_fft.c kiss_fftr.c
+
+MACRO HAVE_CONFIG_H

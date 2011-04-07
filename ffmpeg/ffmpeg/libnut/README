@@ -1,0 +1,29 @@
+to compile:
+make
+make install
+
+
+to copy index to beginning of file:
+nutindex old.nut new.nut
+
+to use:
+nutmerge input.avi output.nut  # only MPEG-4 with MP3
+nutmerge input.ogg output.nut  # only Vorbis
+
+
+to play with mplayer:
+./configure                 # libnut should be autodetected after make install
+make
+./mplayer file.nut
+
+
+to play with ffmpeg:
+./configure --enable-libnut
+make
+./ffplay file.nut
+
+
+
+
+
+Oded Shimon <ods15@ods15.dyndns.org>

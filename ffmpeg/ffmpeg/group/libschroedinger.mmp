@@ -1,0 +1,13 @@
+
+TARGET		libschroedinger.lib
+TARGETTYPE	lib
+UID			0
+
+USERINCLUDE ../schroedinger ../schroedinger/schroedinger ../liboil
+SYSTEMINCLUDE /epoc32/include /epoc32/include/stdapis
+
+SOURCEPATH ../schroedinger/schroedinger
+SOURCE schro.c schroanalysis.c schroarith.c schrocog.c schrodecoder.c schrodebug.c schrodomain.c schroencoder.c schroengine.c schrofft.c schrofilter.c schroframe.c schrohistogram.c schrobuffer.c schrolist.c schrolowdelay.c schrometric.c schromotion.c schromotionest.c schrooil.c schropack.c schroparams.c schroparse.c schrophasecorrelation.c schroquantiser.c schroqueue.c schrossim.c schrotables.c schrounpack.c schrounpacktables.c schroutils.c schrovideoformat.c schrovirtframe.c schrowavelet.c schrowavelettables.c schroasync-pthread.c
+
+MACRO SCHRO_ENABLE_UNSTABLE_API
+

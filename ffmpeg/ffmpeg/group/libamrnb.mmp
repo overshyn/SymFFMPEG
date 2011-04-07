@@ -1,0 +1,12 @@
+ 
+TARGET		libamrnb.lib
+TARGETTYPE	lib
+UID			0
+ 
+USERINCLUDE ../amrnb
+SYSTEMINCLUDE /epoc32/include /epoc32/include/stdapis
+ 
+SOURCEPATH ../amrnb
+SOURCE interf_dec.c interf_enc.c sp_dec.c sp_enc.c decoder.c encoder.c
+ 
+MACRO ETSI

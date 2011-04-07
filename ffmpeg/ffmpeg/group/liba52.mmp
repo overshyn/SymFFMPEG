@@ -1,0 +1,11 @@
+ 
+TARGET		liba52.lib
+TARGETTYPE	lib
+UID			0
+ 
+SYSTEMINCLUDE /epoc32/include /epoc32/include/stdapis
+ 
+SOURCEPATH ../a52dec/liba52
+SOURCE bitstream.c imdct.c bit_allocate.c parse.c downmix.c
+
+USERINCLUDE ../a52dec/include ../a52dec ../

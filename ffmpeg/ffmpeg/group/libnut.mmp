@@ -1,0 +1,18 @@
+ 
+TARGET		libnut.lib
+TARGETTYPE	lib
+UID			0
+ 
+
+SYSTEMINCLUDE /epoc32/include /epoc32/include/stdapis
+ 
+
+MACRO _LARGEFILE_SOURCE
+MACRO D_FILE_OFFSET_BITS=64
+
+SOURCEPATH ../libnut/libnut
+SOURCE demuxer.c framecode.c muxer.c reorder.c
+SOURCEPATH ../libnut/nututils
+SOURCE demux_avi.c demux_ogg.c framer_mp3.c framer_mpeg4.c framer_vorbis.c nutindex.c nutmerge.c nutparse.c
+
+USERINCLUDE ../libnut ../libnut/libnut

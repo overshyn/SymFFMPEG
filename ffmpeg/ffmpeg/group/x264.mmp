@@ -1,0 +1,27 @@
+
+TARGET			libx264.lib
+TARGETTYPE		LIB
+UID 0
+
+VENDORID		0x00000000
+SECUREID		0x02C0C39C
+
+EPOCHEAPSIZE	0x1000 0x01FFFFFF
+
+USERINCLUDE ../x264 ../x264/common ../x264/encoder
+SYSTEMINCLUDE /epoc32/include /epoc32/include/stdapis /epoc32/include/libc
+
+STATICLIBRARY libcrt0.lib libx264.lib
+LIBRARY euser.lib libc.lib libm.lib
+
+SOURCEPATH ../x264
+SOURCE x264.c matroska.c muxers.c extras/getopt.c
+
+MACRO HAVE_STDINT_H
+MACRO HAVE_STRING_H
+MACRO USE_ABLD
+
+SOURCEPATH ../x264/common
+SOURCE common.c
+SOURCEPATH ../x264/encoder
+SOURCE encoder.c analyse.c ratecontrol.c macroblock.c

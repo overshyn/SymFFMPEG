@@ -1,0 +1,54 @@
+***************
+*** 39,44 ****
+  #  include "../config.h"
+  #endif
+  
+  #if 1
+  #define INLINE __inline
+  #else
+--- 39,51 ----
+  #  include "../config.h"
+  #endif
+  
++ #ifdef __SYMBIAN32__
++ #include <stdint.h>
++ #undef FIXED_POINT
++ #define USE_DOUBLE_PRECISION
++ #define HAS_LRINTF
++ #endif
++ 
+  #if 1
+  #define INLINE __inline
+  #else
+***************
+*** 168,173 ****
+  
+  #include <stdlib.h>
+  
+  typedef unsigned __int64 uint64_t;
+  typedef unsigned __int32 uint32_t;
+  typedef unsigned __int16 uint16_t;
+--- 175,181 ----
+  
+  #include <stdlib.h>
+  
++ #ifndef __SYMBIAN32__
+  typedef unsigned __int64 uint64_t;
+  typedef unsigned __int32 uint32_t;
+  typedef unsigned __int16 uint16_t;
+***************
+*** 176,181 ****
+  typedef __int32 int32_t;
+  typedef __int16 int16_t;
+  typedef __int8  int8_t;
+  typedef float float32_t;
+  
+  
+--- 184,190 ----
+  typedef __int32 int32_t;
+  typedef __int16 int16_t;
+  typedef __int8  int8_t;
++ #endif
+  typedef float float32_t;
+  
+  

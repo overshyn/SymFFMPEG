@@ -1,0 +1,52 @@
+
+TARGET		liboil.lib
+TARGETTYPE	lib
+UID			0
+
+USERINCLUDE ../liboil/ ../loboil/liboil
+SYSTEMINCLUDE /epoc32/include /epoc32/include/stdapis
+
+SOURCEPATH ../liboil/liboil
+SOURCE build_class_decls.c build_marshal.c build_prototypes.c build_prototypes_04.c build_prototypes_doc.c build_trampolines.c liboilcpu.c liboilcpu-misc.c liboildebug.c  liboilfunction.c liboilprofile.c liboilmarshal.c liboilprototype.c liboilrandom.c liboiltest.c liboiltmp.c liboiltrampolines.c liboilutils.c liboilfault.c liboilarray.c
+
+SOURCEPATH ../liboil/liboil/c
+SOURCE ag_clamp.c c_composite.c c_copy.c c_swab.c c_wavelet.c
+
+SOURCEPATH ../liboil/liboil/colorspace
+SOURCE colorspace_composite.c
+
+SOURCEPATH ../liboil/liboil/conv
+SOURCE conv_bitstuff.c conv_c.c conv_misc.c
+
+SOURCEPATH ../liboil/liboil/copy
+SOURCE copy_copy.c copy_copy8x8.c splat_ref.c trans8x8_c.c
+
+SOURCEPATH ../liboil/liboil/dct
+SOURCE dct12_f32.c dct36_f32.c fdct8_f64.c fdct8x8_f64.c fdct8x8s_s16.c fdct8x8theora.c idct8_f64.c idct8x8_c.c idct8x8theora_ref.c imdct32_f32.c
+
+SOURCEPATH ../liboil/liboil/deprecated
+SOURCE abs.c deprecated_average2_u8.c clip_ref.c conv.c permute.c deprecated_scalaradd.c deprecated_scalarmult.c tablelookup.c vectoradd_f64.c vectoradd_s.c
+
+SOURCEPATH ../liboil/liboil/jpeg
+SOURCE convert8x8_c.c jpeg_rgb_decoder.c quantize8x8_c.c yuv2rgb_c.c zigzag8x8_c.c
+
+SOURCEPATH ../liboil/liboil/math
+SOURCE ag_math.c math_math.c
+
+SOURCEPATH ../liboil/liboil/md5
+SOURCE md5.c
+
+SOURCEPATH ../liboil/liboil/ref
+SOURCE addc.c argb_paint.c ayuv2argb.c clamp.c ref_composite.c convert.c ref_copy.c ref_copy8x8.c diff8x8.c diffsquaresum_f32.c diffsquaresum_f64.c error8x8.c mas.c ref_math.c ref_mix_u8.c mt19937ar.c mult8x8_s16.c ref_multsum.c recon8x8.c resample.c rgb.c rowcolsad8x8.c sad8x8.c sad8x8_broken.c sad8x8avg.c ref_sincos_f64.c splat.c squaresum_f32.c ref_squaresum_f64.c sum.c ref_sum_f64.c ref_swab.c trans8x8.c ref_wavelet.c yuv.c
+
+SOURCEPATH ../liboil/liboil/simdpack
+SOURCE abs_misc.c simdpack_average2_u8.c clip_fast.c simdpack_diffsquaresum_f64.c simdpack_mix_u8.c simdpack_multsum.c simdpack_scalaradd.c simdpack_scalarmult.c simdpack_sincos_f64.c simdpack_squaresum_f64.c simdpack_sum_f64.c
+
+SOURCEPATH ../liboil/liboil/utf8
+SOURCE utf8.c utf8_fast.c
+
+MACRO _BSD_SOURCE
+MACRO _GNU_SOURCE
+MACRO OIL_ENABLE_UNSTABLE_API
+MACRO HAVE_CONFIG_H
+
