@@ -51,4 +51,6 @@
 
 #endif
 
+#define __BSD_VISIBLE
+
 #endif /* ! CONFIG_H */

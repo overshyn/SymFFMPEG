@@ -33,7 +33,7 @@
 TARGET        libvorbis.lib
 TARGETTYPE    lib
 UID           0
-MACRO         HAVE_CONFIG_H
+MACRO         HAVE_CONFIG_H __BSD_VISIBLE
 SOURCEPATH    ..\lib
 SOURCE        analysis.c barkmel.c bitrate.c block.c codebook.c envelope.c floor0.c floor1.c info.c
 SOURCE        lookup.c lpc.c lsp.c mapping0.c mdct.c psy.c registry.c res0.c sharedbook.c

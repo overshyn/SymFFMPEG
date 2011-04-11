@@ -4,7 +4,7 @@ TARGETTYPE	lib
 UID			0
 
 USERINCLUDE ../include ../include/vorbis ../include/amrnb ../include/amrwb
-USERINCLUDE ../src/libavcodec ../src/libavdevice ../src/libavformat ../src/libavutil ../src/libswscale ../src ../faac/include ../faad2/include ../x264 ../lame/include ../xvidcore/src ../libvorbis-1.3.2/include ../libogg/include ../a52dec/include ../amrnb ../dirac ../amrwb ../gsm/inc ../schroedinger ../libtheora-1.1.1/include
+USERINCLUDE ../src/libavcodec ../src/libavdevice ../src/libavformat ../src/libavutil ../src/libswscale ../src ../faac/include ../faad2/include ../x264 ../lame/include ../xvidcore/src ../libvorbis-1.3.2/include ../libogg/include ../a52dec/include ../amrnb ../dirac ../amrwb ../gsm/inc ../schroedinger ../libtheora-1.1.1/include ../libvorbis-1.3.2/include
 SYSTEMINCLUDE /epoc32/include /epoc32/include/stdapis
 
 SOURCEPATH ../src/libavcodec
