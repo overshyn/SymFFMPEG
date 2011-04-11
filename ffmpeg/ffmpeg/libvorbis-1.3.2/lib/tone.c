@@ -37,7 +37,7 @@ int main (int argc,char *argv[]){
     float val=0;
     int ival;
     for(j=0;j<argc-1;j++)
-      val+=amp[j]*sin(i/44100.f*f[j]*2*M_PI);
+      val+=amp[j]*sin(i/44100.f*f[j]*2*/*M_PI*/3.14159265358979323846);
     ival=rint(val);
 
     if(ival>32767.f)ival=32767.f;

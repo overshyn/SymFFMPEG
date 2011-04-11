@@ -37,7 +37,7 @@ MACRO         HAVE_CONFIG_H __BSD_VISIBLE
 SOURCEPATH    ..\lib
 SOURCE        analysis.c barkmel.c bitrate.c block.c codebook.c envelope.c floor0.c floor1.c info.c
 SOURCE        lookup.c lpc.c lsp.c mapping0.c mdct.c psy.c registry.c res0.c sharedbook.c
-SOURCE        smallft.c synthesis.c vorbisfile.c window.c vorbisenc.c tone.c psytune.c
+SOURCE        smallft.c synthesis.c vorbisfile.c window.c vorbisenc.c tone.c
 
 USERINCLUDE   . ..\include ..\..\libogg\include ..\..\libogg\symbian
 SYSTEMINCLUDE \epoc32\include \epoc32\include\libc ..\include ..\..\ogg\include ..\..\ogg\symbian
