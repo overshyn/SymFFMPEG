@@ -160,7 +160,7 @@ static void x264_slice_header_init( x264_t *h, x264_slice_header_t *sh,
     sh->i_beta_offset = param->i_deblocking_filter_beta << 1;
 }
 
-static void x264_slice_header_write( bs_t *s, x264_slice_header_t *sh, int i_nal_ref_idc )
+static void x264_slice_header_write( struct bs_t *s, x264_slice_header_t *sh, int i_nal_ref_idc )
 {
     int i;
 

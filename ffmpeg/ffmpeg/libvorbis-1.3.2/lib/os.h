@@ -53,8 +53,9 @@
 #endif
 
 #if defined(__SYMBIAN32__) && defined(__WINS__)
-void *_alloca(size_t size);
-#  define alloca _alloca
+//void *_alloca(size_t size);
+//#  define alloca _alloca
+#include <galloca.h>
 #endif
 
 #ifndef FAST_HYPOT

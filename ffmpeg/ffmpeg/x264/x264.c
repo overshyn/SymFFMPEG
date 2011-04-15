@@ -30,6 +30,7 @@
 
 #include "common/common.h"
 #include "common/cpu.h"
+#include <stdint.h>
 #include "x264.h"
 #include "muxers.h"
 

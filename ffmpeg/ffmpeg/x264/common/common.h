@@ -263,7 +263,7 @@ struct x264_t
         x264_nal_t  nal[X264_NAL_MAX];
         int         i_bitstream;    /* size of p_bitstream */
         uint8_t     *p_bitstream;   /* will hold data for all nal */
-        bs_t        bs;
+        struct bs_t        bs;
         int         i_frame_size;
     } out;
 

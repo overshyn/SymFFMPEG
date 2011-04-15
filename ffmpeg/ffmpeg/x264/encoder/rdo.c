@@ -24,6 +24,8 @@
 
 #define RDO_SKIP_BS
 
+#include <stdint.h>
+
 static uint8_t cabac_prefix_transition[15][128];
 static uint16_t cabac_prefix_size[15][128];
 

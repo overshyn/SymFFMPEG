@@ -54,7 +54,7 @@ static const uint8_t sub_mb_type_b_to_golomb[13]=
 #define BLOCK_INDEX_CHROMA_DC   (-1)
 #define BLOCK_INDEX_LUMA_DC     (-2)
 
-static inline void bs_write_vlc( bs_t *s, vlc_t v )
+static inline void bs_write_vlc( struct bs_t *s, struct vlc_t v )
 {
     bs_write( s, v.i_size, v.i_bits );
 }
@@ -62,7 +62,7 @@ static inline void bs_write_vlc( bs_t *s, vlc_t v )
 /****************************************************************************
  * block_residual_write_cavlc:
  ****************************************************************************/
-static void block_residual_write_cavlc( x264_t *h, bs_t *s, int i_idx, int16_t *l, int i_count )
+static void block_residual_write_cavlc( struct x264_t *h, struct bs_t *s, int i_idx, int16_t *l, int i_count )
 {
     int level[16], run[16];
     int i_total, i_trailing;
@@ -214,7 +214,7 @@ static void block_residual_write_cavlc( x264_t *h, bs_t *s, int i_idx, int16_t *
     }
 }
 
-static void cavlc_qp_delta( x264_t *h, bs_t *s )
+static void cavlc_qp_delta( struct x264_t *h, struct bs_t *s )
 {
     int i_dqp = h->mb.i_qp - h->mb.i_last_qp;
 
@@ -238,7 +238,7 @@ static void cavlc_qp_delta( x264_t *h, bs_t *s )
     bs_write_se( s, i_dqp );
 }
 
-static void cavlc_mb_mvd( x264_t *h, bs_t *s, int i_list, int idx, int width )
+static void cavlc_mb_mvd( struct x264_t *h, struct bs_t *s, int i_list, int idx, int width )
 {
     DECLARE_ALIGNED_4( int16_t mvp[2] );
     x264_mb_predict_mv( h, i_list, idx, width, mvp );
@@ -246,7 +246,7 @@ static void cavlc_mb_mvd( x264_t *h, bs_t *s, int i_list, int idx, int width )
     bs_write_se( s, h->mb.cache.mv[i_list][x264_scan8[idx]][1] - mvp[1] );
 }
 
-static void cavlc_mb8x8_mvd( x264_t *h, bs_t *s, int i_list, int i )
+static void cavlc_mb8x8_mvd( struct x264_t *h, struct bs_t *s, int i_list, int i )
 {
     if( !x264_mb_partition_listX_table[i_list][ h->mb.i_sub_partition[i] ] )
         return;
@@ -281,7 +281,7 @@ static void cavlc_mb8x8_mvd( x264_t *h, bs_t *s, int i_list, int i )
     }
 }
 
-static inline void x264_macroblock_luma_write_cavlc( x264_t *h, bs_t *s, int i8start, int i8end )
+static inline void x264_macroblock_luma_write_cavlc( struct x264_t *h, struct bs_t *s, int i8start, int i8end )
 {
     int i8, i4, i;
     if( h->mb.b_transform_8x8 )
@@ -306,7 +306,7 @@ static inline void x264_macroblock_luma_write_cavlc( x264_t *h, bs_t *s, int i8s
 /*****************************************************************************
  * x264_macroblock_write:
  *****************************************************************************/
-void x264_macroblock_write_cavlc( x264_t *h, bs_t *s )
+void x264_macroblock_write_cavlc( struct x264_t *h, struct bs_t *s )
 {
     const int i_mb_type = h->mb.i_type;
     int i_mb_i_offset;
@@ -680,9 +680,9 @@ void x264_macroblock_write_cavlc( x264_t *h, bs_t *s )
  * works on all partition sizes except 16x16
  * for sub8x8, call once per 8x8 block
  *****************************************************************************/
-int x264_partition_size_cavlc( x264_t *h, int i8, int i_pixel )
+int x264_partition_size_cavlc( struct x264_t *h, int i8, int i_pixel )
 {
-    bs_t s;
+    struct bs_t s;
     const int i_mb_type = h->mb.i_type;
     int j;
 
@@ -737,7 +737,7 @@ int x264_partition_size_cavlc( x264_t *h, int i8, int i_pixel )
     return s.i_bits_encoded;
 }
 
-static int cavlc_intra4x4_pred_size( x264_t *h, int i4, int i_mode )
+static int cavlc_intra4x4_pred_size( struct x264_t *h, int i4, int i_mode )
 {
     if( x264_mb_predict_intra4x4_mode( h, i4 ) == x264_mb_pred_mode4x4_fix( i_mode ) )
         return 1;
@@ -745,7 +745,7 @@ static int cavlc_intra4x4_pred_size( x264_t *h, int i4, int i_mode )
         return 4;
 }
 
-static int x264_partition_i8x8_size_cavlc( x264_t *h, int i8, int i_mode )
+static int x264_partition_i8x8_size_cavlc( struct x264_t *h, int i8, int i_mode )
 {
     int i4, i;
     h->out.bs.i_bits_encoded = cavlc_intra4x4_pred_size( h, 4*i8, i_mode );
@@ -760,14 +760,14 @@ static int x264_partition_i8x8_size_cavlc( x264_t *h, int i8, int i_mode )
     return h->out.bs.i_bits_encoded;
 }
 
-static int x264_partition_i4x4_size_cavlc( x264_t *h, int i4, int i_mode )
+static int x264_partition_i4x4_size_cavlc( struct x264_t *h, int i4, int i_mode )
 {
     h->out.bs.i_bits_encoded = cavlc_intra4x4_pred_size( h, i4, i_mode );
     block_residual_write_cavlc( h, &h->out.bs, i4, h->dct.luma4x4[i4], 16 );
     return h->out.bs.i_bits_encoded;
 }
 
-static int x264_i8x8_chroma_size_cavlc( x264_t *h )
+static int x264_i8x8_chroma_size_cavlc( struct x264_t *h )
 {
     h->out.bs.i_bits_encoded = bs_size_ue( x264_mb_pred_mode8x8c_fix[ h->mb.i_chroma_pred_mode ] );
     if( h->mb.i_cbp_chroma != 0 )

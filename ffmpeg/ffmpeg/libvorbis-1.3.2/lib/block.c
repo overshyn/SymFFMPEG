@@ -30,6 +30,8 @@
 #include "lpc.h"
 #include "registry.h"
 #include "misc.h"
+#include "os.h"
+#include <galloca.h>
 
 static int ilog2(unsigned int v){
   int ret=0;
