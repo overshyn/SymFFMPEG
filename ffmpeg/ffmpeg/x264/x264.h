@@ -24,6 +24,8 @@
 #ifndef X264_X264_H
 #define X264_X264_H
 
+#include <stdint.h>
+
 #if !defined(_STDINT_H) && !defined(_STDINT_H_) && \
     !defined(_INTTYPES_H) && !defined(_INTTYPES_H_)
 # ifdef _MSC_VER

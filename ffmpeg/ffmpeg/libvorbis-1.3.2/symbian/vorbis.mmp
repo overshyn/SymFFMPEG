@@ -40,4 +40,4 @@ SOURCE        lookup.c lpc.c lsp.c mapping0.c mdct.c psy.c registry.c res0.c sha
 SOURCE        smallft.c synthesis.c vorbisfile.c window.c vorbisenc.c tone.c
 
 USERINCLUDE   . ..\include ..\..\libogg\include ..\..\libogg\symbian
-SYSTEMINCLUDE \epoc32\include \epoc32\include\libc ..\include ..\..\ogg\include ..\..\ogg\symbian
+SYSTEMINCLUDE \epoc32\include \epoc32\include\libc ..\include ..\..\ogg\include ..\..\ogg\symbian \epoc32\include\stdapis\glib-2.0\glib \epoc32\include\stdapis\glib-2.0 \epoc32\include\stdapis

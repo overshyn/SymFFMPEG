@@ -69,7 +69,7 @@ static int ssd_plane( x264_t *h, int size, int p, int x, int y )
                               h->mb.pic.p_fdec[p] + x+y*FDEC_STRIDE, FDEC_STRIDE );
 }
 
-static int x264_rd_cost_mb( x264_t *h, int i_lambda2 )
+static int x264_rd_cost_mb( struct x264_t *h, int i_lambda2 )
 {
     int b_transform_bak = h->mb.b_transform_8x8;
     int i_ssd;
@@ -92,7 +92,7 @@ static int x264_rd_cost_mb( x264_t *h, int i_lambda2 )
     }
     else
     {
-        bs_t bs_tmp = h->out.bs;
+        struct bs_t bs_tmp = h->out.bs;
         bs_tmp.i_bits_encoded = 0;
         x264_macroblock_size_cavlc( h, &bs_tmp );
         i_bits = ( bs_tmp.i_bits_encoded * i_lambda2 + 128 ) >> 8;
