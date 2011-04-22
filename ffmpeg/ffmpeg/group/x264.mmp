@@ -24,12 +24,12 @@ MACRO USE_ABLD
 SOURCEPATH ../x264/common
 SOURCE common.c
 SOURCEPATH ../x264/encoder
-SOURCE analyse.c ratecontrol.c macroblock.c
+SOURCE analyse.c ratecontrol.c
 SOURCEPATH ../x264/common
 SOURCE cpu.c
-SOURCEPATH ../x264/encoder
-SOURCE set.c rdo.c
 SOURCEPATH ../x264/common
-SOURCE set.c macroblock.c cabac.c dct.c display-x11.c frame.c mc.c mdate.c pixel.c predict.c quant.c visualize.c vlc.c
+SOURCE set.c macroblock.c cabac.c dct.c frame.c mc.c mdate.c pixel.c predict.c quant.c vlc.c
 SOURCEPATH ../x264/encoder
-SOURCE cabac.c slicetype.c
+SOURCE slicetype.c
+SOURCEPATH ../x264/common
+SOURCE bs.c

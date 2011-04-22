@@ -49,7 +49,7 @@ extern const struct vlc_t x264_total_zeros[15][16];
 extern const struct vlc_t x264_total_zeros_dc[3][4];
 extern const struct vlc_t x264_run_before[7][15];
 
-static inline void bs_init( struct bs_t *s, void *p_data, int i_data )
+/*static inline void bs_init( struct bs_t *s, void *p_data, int i_data )
 {
     int offset = ((intptr_t)p_data & (WORD_SIZE-1));
     s->p       = s->p_start = (uint8_t*)p_data - offset;
@@ -60,47 +60,17 @@ static inline void bs_init( struct bs_t *s, void *p_data, int i_data )
 static inline int bs_pos( struct bs_t *s )
 {
     return( 8 * (s->p - s->p_start) + (WORD_SIZE*8) - s->i_left );
-}
+}*/
 
 /* Write the rest of cur_bits to the bitstream; results in a bitstream no longer 32/64-bit aligned. */
-static inline void bs_flush( struct bs_t *s )
+/*static inline void bs_flush( struct bs_t *s )
 {
     *(intptr_t*)s->p = endian_fix( s->cur_bits << s->i_left );
     s->p += WORD_SIZE - s->i_left / 8;
     s->i_left = WORD_SIZE*8;
-}
+}*/
 
-static inline void bs_write( struct bs_t *s, int i_count, uint32_t i_bits )
-{
-    if( WORD_SIZE == 8 )
-    {
-        s->cur_bits = (s->cur_bits << i_count) | i_bits;
-        s->i_left -= i_count;
-        if( s->i_left <= 32 )
-        {
-            *(uint32_t*)s->p = endian_fix( s->cur_bits << s->i_left );
-            s->i_left += 32;
-            s->p += 4;
-        }
-    }
-    else
-    {
-        if( i_count < s->i_left )
-        {
-            s->cur_bits = (s->cur_bits << i_count) | i_bits;
-            s->i_left -= i_count;
-        }
-        else
-        {
-            i_count -= s->i_left;
-            s->cur_bits = (s->cur_bits << s->i_left) | (i_bits >> i_count);
-            *(uint32_t*)s->p = endian_fix( s->cur_bits );
-            s->p += 4;
-            s->cur_bits = i_bits;
-            s->i_left = 32 - i_count;
-        }
-    }
-}
+void bs_write( struct bs_t *s, int i_count, uint32_t i_bits );
 
 /* Special case to eliminate branch in normal bs_write. */
 /* Golomb never writes an even-size code, so this is only used in slice headers. */

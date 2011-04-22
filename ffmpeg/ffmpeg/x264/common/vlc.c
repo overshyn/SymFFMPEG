@@ -21,7 +21,7 @@
 #include "common.h"
 
 #define MKVLC( a, b ) { a, b }
-const vlc_t x264_coeff_token[5][17*4] =
+const struct vlc_t x264_coeff_token[5][17*4] =
 {
     /* table 0 */
     {
@@ -464,7 +464,7 @@ const vlc_t x264_coeff_token[5][17*4] =
 };
 
 /* [i_total_coeff-1][i_total_zeros] */
-const vlc_t x264_total_zeros[15][16] =
+const struct vlc_t x264_total_zeros[15][16] =
 {
     { /* i_total 1 */
         MKVLC( 0x1, 1 ), /* str=1 */
@@ -739,7 +739,7 @@ const vlc_t x264_total_zeros[15][16] =
 };
 
 /* [i_total_coeff-1][i_total_zeros] */
-const vlc_t x264_total_zeros_dc[3][4] =
+const struct vlc_t x264_total_zeros_dc[3][4] =
 {
     {
         MKVLC( 0x01, 1 ), /* 1  */
@@ -762,7 +762,7 @@ const vlc_t x264_total_zeros_dc[3][4] =
 };
 
 /* x264_run_before[__MIN( i_zero_left -1, 6 )][run_before] */
-const vlc_t x264_run_before[7][15] =
+const struct vlc_t x264_run_before[7][15] =
 {
     { /* i_zero_left 1 */
         MKVLC( 0x1, 1 ), /* str=1 */

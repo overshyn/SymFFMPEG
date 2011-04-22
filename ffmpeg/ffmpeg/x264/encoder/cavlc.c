@@ -21,9 +21,10 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02111, USA.
  *****************************************************************************/
 
+#include <stdint.h>
 #include "common/common.h"
 #include "macroblock.h"
-#include <stdint.h>
+
 
 static const uint8_t intra4x4_cbp_to_golomb[48]=
 {
