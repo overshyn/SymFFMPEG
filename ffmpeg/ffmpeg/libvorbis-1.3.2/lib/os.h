@@ -52,7 +52,7 @@
 #  define FAST_HYPOT(a, b) sqrt((a)*(a) + (b)*(b))
 #endif
 
-#if defined(__SYMBIAN32__) && defined(__WINS__)
+#if defined(__SYMBIAN32__)  
 //void *_alloca(size_t size);
 //#  define alloca _alloca
 #include <galloca.h>

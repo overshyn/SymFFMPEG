@@ -44,6 +44,7 @@
 #include "vorbis/codec.h"
 #include "mdct.h"
 #include "os.h"
+#include <galloca.h>
 #include "misc.h"
 
 /* build lookups for trig functions; also pre-figure scaling and

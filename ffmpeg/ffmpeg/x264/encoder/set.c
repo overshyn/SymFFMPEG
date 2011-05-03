@@ -38,7 +38,7 @@ static void transpose( uint8_t *buf, int w )
             XCHG( uint8_t, buf[w*i+j], buf[w*j+i] );
 }
 
-static void scaling_list_write( bs_t *s, x264_pps_t *pps, int idx )
+static void scaling_list_write( struct bs_t *s, x264_pps_t *pps, int idx )
 {
     const int len = idx<4 ? 16 : 64;
     const uint8_t *zigzag = idx<4 ? x264_zigzag_scan4[0] : x264_zigzag_scan8[0];
@@ -212,7 +212,7 @@ void x264_sps_init( x264_sps_t *sps, int i_id, x264_param_t *param )
 }
 
 
-void x264_sps_write( bs_t *s, x264_sps_t *sps )
+void x264_sps_write( struct bs_t *s, x264_sps_t *sps )
 {
     bs_write( s, 8, sps->i_profile_idc );
     bs_write( s, 1, sps->b_constraint_set0 );
@@ -425,7 +425,7 @@ void x264_pps_init( x264_pps_t *pps, int i_id, x264_param_t *param, x264_sps_t *
     }
 }
 
-void x264_pps_write( bs_t *s, x264_pps_t *pps )
+void x264_pps_write( struct bs_t *s, x264_pps_t *pps )
 {
     bs_write_ue( s, pps->i_id );
     bs_write_ue( s, pps->i_sps_id );
@@ -471,7 +471,7 @@ void x264_pps_write( bs_t *s, x264_pps_t *pps )
     bs_rbsp_trailing( s );
 }
 
-void x264_sei_version_write( x264_t *h, bs_t *s )
+void x264_sei_version_write( struct x264_t *h, struct bs_t *s )
 {
     int i;
     // random ID number generated according to ISO-11578

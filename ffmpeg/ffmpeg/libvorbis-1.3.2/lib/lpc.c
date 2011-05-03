@@ -47,6 +47,7 @@ Carsten Bormann
 #include <string.h>
 #include <math.h>
 #include "os.h"
+#include <galloca.h>
 #include "smallft.h"
 #include "lpc.h"
 #include "scales.h"

@@ -22,6 +22,7 @@ TARGETPATH /private/10003a3f/import/apps
 #endif
 END
 
+
 SOURCEPATH ../src
 SOURCE ffmpeg.c cmdutils.c
 
@@ -66,3 +67,5 @@ LIBRARY libpthread.lib
 
 SOURCEPATH ../a52dec/liba52
 SOURCE bit_allocate.c bitstream.c downmix.c imdct.c parse.c
+
+LINKEROPTION GCCE -Tdata 0x1000000

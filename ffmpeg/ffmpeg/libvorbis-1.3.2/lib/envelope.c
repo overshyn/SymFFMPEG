@@ -24,6 +24,7 @@
 #include "codec_internal.h"
 
 #include "os.h"
+#include <galloca.h>
 #include "scales.h"
 #include "envelope.h"
 #include "mdct.h"

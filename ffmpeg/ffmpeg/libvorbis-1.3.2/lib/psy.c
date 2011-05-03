@@ -24,6 +24,7 @@
 #include "masking.h"
 #include "psy.h"
 #include "os.h"
+#include <galloca.h>
 #include "lpc.h"
 #include "smallft.h"
 #include "scales.h"

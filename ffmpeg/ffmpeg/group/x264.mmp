@@ -28,8 +28,14 @@ SOURCE analyse.c ratecontrol.c
 SOURCEPATH ../x264/common
 SOURCE cpu.c
 SOURCEPATH ../x264/common
-SOURCE set.c macroblock.c cabac.c dct.c frame.c mc.c mdate.c pixel.c predict.c quant.c vlc.c
+SOURCE macroblock.c cabac_common.c dct.c frame.c mc.c mdate.c pixel.c predict.c quant.c vlc.c
 SOURCEPATH ../x264/encoder
-SOURCE slicetype.c
+SOURCE encoder.c macroblock.c me.c
 SOURCEPATH ../x264/common
-SOURCE bs.c
+SOURCE macroblock_common.c
+SOURCEPATH ../x264/encoder
+SOURCE cabac.c set.c
+SOURCEPATH ../x264/common
+SOURCE set_common.c
+SOURCEPATH ../x264/encoder
+SOURCE eval.c cavlc.c
