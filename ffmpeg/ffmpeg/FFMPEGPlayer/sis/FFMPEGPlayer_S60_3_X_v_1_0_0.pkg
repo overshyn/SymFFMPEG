@@ -1,0 +1,37 @@
+; Installation file for FFMPEGPlayer application
+;
+; This is an auto-generated PKG file by Carbide.
+; This file uses variables specific to Carbide builds that will not work
+; on command-line builds. If you want to use this generated PKG file from the
+; command-line tools you will need to modify the variables with the appropriate
+; values: $(EPOCROOT), $(PLATFORM), $(TARGET)
+;
+;Language - standard language definitions
+&EN
+
+; standard SIS file header
+#{"FFMPEGPlayer"},(0xE28ECF2D),1,0,0
+
+;Localised Vendor name
+%{"Vendor-EN"}
+
+;Unique Vendor name
+:"Vendor"
+
+;Supports Series 60 v 3.0
+[0x101F7961], 0, 0, 0, {"Series60ProductID"}
+
+;Files to install
+;You should change the source paths to match that of your environment
+;<source> <destination>
+"$(EPOCROOT)Epoc32\release\$(PLATFORM)\$(TARGET)\FFMPEGPlayer_0xE28ECF2D.exe"		-"!:\sys\bin\FFMPEGPlayer_0xE28ECF2D.exe"
+"$(EPOCROOT)Epoc32\data\z\resource\apps\FFMPEGPlayer_0xE28ECF2D.rsc"		-"!:\resource\apps\FFMPEGPlayer_0xE28ECF2D.rsc"
+"$(EPOCROOT)Epoc32\data\z\private\10003a3f\apps\FFMPEGPlayer_0xE28ECF2D_reg.rsc"	-"!:\private\10003a3f\import\apps\FFMPEGPlayer_0xE28ECF2D_reg.rsc"
+"$(EPOCROOT)Epoc32\data\z\resource\apps\FFMPEGPlayer_0xE28ECF2D.mif" -"!:\resource\apps\FFMPEGPlayer_0xE28ECF2D.mif"
+"..\help\FFMPEGPlayer_0xE28ECF2D.hlp"							 -"!:\resource\help\FFMPEGPlayer_0xE28ECF2D.hlp"
+
+; Add any installation notes if applicable
+;"FFMPEGPlayer.txt"		-"!:\private\E28ECF2D\FFMPEGPlayer.txt"
+
+;required for application to be covered by backup/restore facility 
+"..\sis\backup_registration.xml"		-"!:\private\E28ECF2D\backup_registration.xml"

@@ -1,0 +1,59 @@
+/*
+============================================================================
+ Name		: FFMPEGPlayer.mmp
+ Author	  : Alex
+ Copyright   : Your copyright notice
+ Description : This is the project specification file for FFMPEGPlayer.
+============================================================================
+*/
+
+
+TARGET			FFMPEGPlayer_0xE28ECF2D.exe
+TARGETTYPE		exe
+UID		  0x100039CE 0xE28ECF2D
+
+
+SOURCEPATH		..\FFMPEGPlayer\data
+
+START RESOURCE	FFMPEGPlayer.rss
+HEADER
+TARGET FFMPEGPlayer_0xE28ECF2D
+TARGETPATH resource\apps
+END //RESOURCE
+
+START RESOURCE	FFMPEGPlayer_reg.rss
+TARGET FFMPEGPlayer_0xE28ECF2D_reg
+TARGETPATH 	  \private\10003a3f\apps
+END //RESOURCE
+
+
+
+USERINCLUDE	   ..\FFMPEGPlayer\inc
+USERINCLUDE    ..\FFMPEGPlayer\help
+
+SYSTEMINCLUDE	 \epoc32\include
+
+LIBRARY		   euser.lib
+LIBRARY		   apparc.lib
+LIBRARY		   cone.lib
+LIBRARY		   eikcore.lib
+LIBRARY		   avkon.lib
+LIBRARY		   commonengine.lib
+LIBRARY		   efsrv.lib 
+LIBRARY		   estor.lib
+LIBRARY        aknnotify.lib
+LIBRARY        hlplch.lib
+ 
+
+LANG SC
+
+VENDORID	  	  0
+SECUREID		  0xE28ECF2D
+CAPABILITY	  	  ReadUserData
+
+#ifdef ENABLE_ABIV2_MODE
+  DEBUGGABLE_UDEBONLY
+#endif
+// End of File
+SOURCEPATH ..\FFMPEGPlayer\src
+SOURCE FFMPEGPlayer.cpp FFMPEGPlayerAppUi.cpp FFMPEGPlayerAppView.cpp FFMPEGPlayerApplication.cpp FFMPEGPlayerDocument.cpp

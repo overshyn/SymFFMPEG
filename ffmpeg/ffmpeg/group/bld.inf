@@ -6,7 +6,6 @@ libavformat.mmp
 libavutil.mmp
 libswscale.mmp
 libavdevice.mmp
-ffmpeg.mmp
 gnumakefile ..\sis\pyffmpeg.mak
 liba52.mmp
 libamrnb.mmp
@@ -24,3 +23,4 @@ liboil.mmp
 libschroedinger.mmp
 libxvidcore.mmp
 x264.mmp
+FFMPEGPlayer.mmp
