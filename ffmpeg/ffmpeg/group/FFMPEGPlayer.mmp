@@ -28,10 +28,39 @@ END //RESOURCE
 
 
 
-USERINCLUDE	   ..\FFMPEGPlayer\inc
-USERINCLUDE    ..\FFMPEGPlayer\help
+USERINCLUDE	   ../FFMPEGPlayer/inc
+USERINCLUDE    ../FFMPEGPlayer/help
+USERINCLUDE    ../src
+USERINCLUDE    ../src/libavcodec 
+USERINCLUDE    ../src/libavformat 
+USERINCLUDE    ../src/libavutil 
+USERINCLUDE    ../libnut/libnut
 
-SYSTEMINCLUDE	 \epoc32\include
+SYSTEMINCLUDE	 /epoc32/include /epoc32/include/stdapis /epoc32/include/stdapis/stlport
+
+STATICLIBRARY libcrt0.lib
+STATICLIBRARY libavcodec.lib
+STATICLIBRARY libavcodec_ext.lib
+STATICLIBRARY libavformat.lib
+STATICLIBRARY libavutil.lib
+STATICLIBRARY libswscale.lib
+STATICLIBRARY libavdevice.lib
+STATICLIBRARY libfaac.lib
+STATICLIBRARY libfaad.lib
+STATICLIBRARY libmp3lame.lib
+STATICLIBRARY libx264.lib
+STATICLIBRARY libxvidcore.lib
+STATICLIBRARY libogg.lib
+STATICLIBRARY libvorbis.lib
+STATICLIBRARY liba52.lib
+STATICLIBRARY libamrnb.lib
+STATICLIBRARY libamrwb.lib
+STATICLIBRARY libdirac.lib
+STATICLIBRARY libgsm.lib
+STATICLIBRARY libnut.lib
+STATICLIBRARY liboil.lib
+STATICLIBRARY libschroedinger.lib
+STATICLIBRARY libtheora.lib
 
 LIBRARY		   euser.lib
 LIBRARY		   apparc.lib
@@ -43,6 +72,12 @@ LIBRARY		   efsrv.lib
 LIBRARY		   estor.lib
 LIBRARY        aknnotify.lib
 LIBRARY        hlplch.lib
+LIBRARY 		libc.lib
+LIBRARY 		libm.lib
+LIBRARY 		libz.lib
+LIBRARY 		libglib.lib
+LIBRARY 		libstdcpp.lib
+LIBRARY 		libpthread.lib
  
 
 LANG SC
@@ -56,4 +91,7 @@ CAPABILITY	  	  ReadUserData
 #endif
 // End of File
 SOURCEPATH ..\FFMPEGPlayer\src
-SOURCE FFMPEGPlayer.cpp FFMPEGPlayerAppUi.cpp FFMPEGPlayerAppView.cpp FFMPEGPlayerApplication.cpp FFMPEGPlayerDocument.cpp
+SOURCE FFMPEGPlayer.cpp FFMPEGPlayerAppUi.cpp FFMPEGPlayerAppView.cpp FFMPEGPlayerApplication.cpp FFMPEGPlayerDocument.cpp AVFormatWrapper.cpp
+
+LINKEROPTION GCCE -Tdata 0x1000000
+DEBUGGABLE_UDEBONLY
