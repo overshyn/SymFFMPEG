@@ -24,5 +24,6 @@ libschroedinger.mmp
 libxvidcore.mmp
 x264.mmp
 FFMPEGPlayer.mmp
+gnumakefile Icons_scalable_dc.mk
 
 

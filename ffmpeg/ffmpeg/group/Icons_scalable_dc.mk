@@ -16,7 +16,7 @@ endif
 TARGETDIR=$(ZDIR)\resource\apps
 ICONTARGETFILENAME=$(TARGETDIR)\FFMPEGPlayer_0xE28ECF2D.mif
 
-ICONDIR=..\gfx
+ICONDIR=..\FFMPEGPlayer\gfx
 
 do_nothing :
 	@rem do_nothing
@@ -45,6 +45,7 @@ $(ICONTARGETFILENAME) : $(ICONDIR)\qgn_menu_FFMPEGPlayer.svg
 	mifconv $(ICONTARGETFILENAME) \
 		/c32 $(ICONDIR)\qgn_menu_FFMPEGPlayer.svg
 
+	mifconv $(TARGETDIR)\ffmpeg.mif
 FREEZE : do_nothing
 
 SAVESPACE : do_nothing

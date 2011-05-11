@@ -28,7 +28,7 @@
 "$(EPOCROOT)Epoc32\data\z\resource\apps\FFMPEGPlayer_0xE28ECF2D.rsc"		-"!:\resource\apps\FFMPEGPlayer_0xE28ECF2D.rsc"
 "$(EPOCROOT)Epoc32\data\z\private\10003a3f\apps\FFMPEGPlayer_0xE28ECF2D_reg.rsc"	-"!:\private\10003a3f\import\apps\FFMPEGPlayer_0xE28ECF2D_reg.rsc"
 "$(EPOCROOT)Epoc32\data\z\resource\apps\FFMPEGPlayer_0xE28ECF2D.mif" -"!:\resource\apps\FFMPEGPlayer_0xE28ECF2D.mif"
-"..\help\FFMPEGPlayer_0xE28ECF2D.hlp"							 -"!:\resource\help\FFMPEGPlayer_0xE28ECF2D.hlp"
+
 
 ; Add any installation notes if applicable
 ;"FFMPEGPlayer.txt"		-"!:\private\E28ECF2D\FFMPEGPlayer.txt"
