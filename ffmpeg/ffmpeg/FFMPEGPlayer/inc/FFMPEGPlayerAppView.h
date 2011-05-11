@@ -12,6 +12,7 @@
 
 // INCLUDES
 #include <coecntrl.h>
+#include "AVFormatWrapper.h"
 
 // CLASS DECLARATION
 class CFFMPEGPlayerAppView : public CCoeControl
@@ -86,6 +87,8 @@ private:
 	 * C++ default constructor.
 	 */
 	CFFMPEGPlayerAppView();
+	
+	AVFormatWrapper * m_pAVFormat;
 
 	};
 

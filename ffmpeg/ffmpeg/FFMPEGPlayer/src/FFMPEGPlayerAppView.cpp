@@ -53,6 +53,9 @@ void CFFMPEGPlayerAppView::ConstructL(const TRect& aRect)
 
 	// Activate the window, which makes it ready to be drawn
 	ActivateL();
+	
+	m_pAVFormat = new AVFormatWrapper();
+	
 	}
 
 // -----------------------------------------------------------------------------
@@ -72,7 +75,7 @@ CFFMPEGPlayerAppView::CFFMPEGPlayerAppView()
 //
 CFFMPEGPlayerAppView::~CFFMPEGPlayerAppView()
 	{
-	// No implementation required
+		delete m_pAVFormat;
 	}
 
 // -----------------------------------------------------------------------------
